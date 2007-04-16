@@ -2,6 +2,7 @@
 %define		srcname	thunar-thumbnailers
 #
 Summary:	Thumbnailers plugin for the Thunar file manager
+Summary(pl.UTF-8):	Wtyczka Thumbnailers dla zarządcy plików Thunar
 Name:		Thunar-thumbnailers
 Version:	0.2.0
 Release:	1
@@ -26,6 +27,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Thunar-thumbnailers provides additional thumbnailers for use by the
 Thunar file manager.
+
+%description -l pl.UTF-8
+Thunar-thumbnailers dostarcza dodatkowe moduły wykonujące miniaturki
+plików dla zarządcy plików Thunar.
 
 %prep
 %setup -q -n %{srcname}-0.0.1svn-r02578
