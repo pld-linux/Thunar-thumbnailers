@@ -2,7 +2,7 @@
 %define		srcname	thunar-thumbnailers
 #
 Summary:	Thumbnailers plugin for the Thunar file manager
-Summary(pl.UTF-8):	Wtyczka Thumbnailers dla zarzÄ…dcy plikÃ³w Thunar
+Summary(pl):	Wtyczka Thumbnailers dla zarz±dcy plików Thunar
 Name:		Thunar-thumbnailers
 Version:	0.2.0
 Release:	1
@@ -17,20 +17,15 @@ BuildRequires:	automake >= 1:1.8
 BuildRequires:	rpmbuild(macros) >= 1.311
 Requires(post,postun):	shared-mime-info
 Requires:	Thunar >= 0.8.0
-Suggests:	ImageMagick
-Suggests:	dcraw
-Suggests:	ffmpegthumbnailer
-Suggests:	grace
-Suggests:	tetex-format-latex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Thunar-thumbnailers provides additional thumbnailers for use by the
 Thunar file manager.
 
-%description -l pl.UTF-8
-Thunar-thumbnailers dostarcza dodatkowe moduÅ‚y wykonujÄ…ce miniaturki
-plikÃ³w dla zarzÄ…dcy plikÃ³w Thunar.
+%description -l pl
+Thunar-thumbnailers dostarcza dodatkowe modu³y wykonuj±ce miniaturki
+plików dla zarz±dcy plików Thunar.
 
 %prep
 %setup -q -n %{srcname}-0.0.1svn-r02578
@@ -59,6 +54,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %update_mime_database
+%banner %{name} -e << EOF
+For full functionality, you need to install:
+- ImageMagick
+- dcraw
+- ffmpegthumbnailer
+- grace
+- tetex-format-latex
+EOF
 
 %postun
 %update_mime_database
