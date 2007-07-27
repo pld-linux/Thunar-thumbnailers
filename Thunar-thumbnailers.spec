@@ -4,12 +4,12 @@
 Summary:	Thumbnailers plugin for the Thunar file manager
 Summary(pl.UTF-8):	Wtyczka Thumbnailers dla zarządcy plików Thunar
 Name:		Thunar-thumbnailers
-Version:	0.2.0
+Version:	0.2.2
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://goodies.xfce.org/releases/thunar-thumbnailers/%{srcname}-%{version}.tar.bz2
-# Source0-md5:	9d1e5ebe36c8672048062392d4f329b9
+# Source0-md5:	5d50e74ebc052d4c92a6a526ba7570ff
 Patch0:		%{name}-configure.patch
 URL:		http://goodies.xfce.org/projects/thunar-plugins/thunar-thumbnailers
 BuildRequires:	autoconf >= 2.50
@@ -33,7 +33,7 @@ Thunar-thumbnailers dostarcza dodatkowe moduły wykonujące miniaturki
 plików dla zarządcy plików Thunar.
 
 %prep
-%setup -q -n %{srcname}-0.0.1svn-r02578
+%setup -q -n thunar-thumbnailers-%{version}
 %patch0 -p1
 
 %build
@@ -70,6 +70,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/eps-thumbnailer
 %attr(755,root,root) %{_libdir}/ffmpeg-thumbnailer
 %attr(755,root,root) %{_libdir}/fig-thumbnailer
+%attr(755,root,root) %{_libdir}/ogg-thumbnailer
 %attr(755,root,root) %{_libdir}/ps-thumbnailer
 %attr(755,root,root) %{_libdir}/raw-thumbnailer
 %attr(755,root,root) %{_libdir}/tex-thumbnailer
@@ -78,6 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/thumbnailers/eps-thumbnailer.desktop
 %{_datadir}/thumbnailers/ffmpeg-thumbnailer.desktop
 %{_datadir}/thumbnailers/fig-thumbnailer.desktop
+%{_datadir}/thumbnailers/ogg-thumbnailer.desktop
 %{_datadir}/thumbnailers/ps-thumbnailer.desktop
 %{_datadir}/thumbnailers/raw-thumbnailer.desktop
 %{_datadir}/thumbnailers/tex-thumbnailer.desktop
