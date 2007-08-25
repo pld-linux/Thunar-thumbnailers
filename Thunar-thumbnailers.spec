@@ -13,11 +13,7 @@ Source0:	http://goodies.xfce.org/releases/thunar-thumbnailers/%{srcname}-%{versi
 URL:		http://goodies.xfce.org/projects/thunar-plugins/thunar-thumbnailers
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.8
-BuildRequires:	dcraw
-BuildRequires:	grace
-BuildRequires:	raw-thumbnailer
 BuildRequires:	rpmbuild(macros) >= 1.311
-BuildRequires:	tetex-format-latex
 Requires(post,postun):	shared-mime-info
 Requires:	Thunar >= 0.8.0
 Suggests:	ImageMagick
@@ -42,8 +38,14 @@ plików dla zarządcy plików Thunar.
 %build
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure \
+	DCRAW=/usr/bin/dcraw \
+	FFMPEG=/usr/bin/ffmpegthumbnailer \
+	GRACE=/usr/bin/gracebat \
+	LATEX=/usr/bin/latex \
+	RAWTHUMBNAILER=/usr/bin/raw-thumbnailer \
 	--enable-raw \
 	--enable-tex \
 	--enable-grace \
