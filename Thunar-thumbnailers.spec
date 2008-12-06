@@ -1,15 +1,18 @@
 #
+# TODO:
+# - rename to thunar-thumbnailers
+#
 %define		srcname	thunar-thumbnailers
 #
 Summary:	Thumbnailers plugin for the Thunar file manager
 Summary(pl.UTF-8):	Wtyczka Thumbnailers dla zarządcy plików Thunar
 Name:		Thunar-thumbnailers
-Version:	0.3.0
+Version:	0.4.1
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://goodies.xfce.org/releases/thunar-thumbnailers/%{srcname}-%{version}.tar.bz2
-# Source0-md5:	b451516fcfa97c8fabf71cf935a2550a
+# Source0-md5:	041b8aa0576e15491661741d1868547f
 URL:		http://goodies.xfce.org/projects/thunar-plugins/thunar-thumbnailers
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.8
@@ -41,16 +44,18 @@ plików dla zarządcy plików Thunar.
 %{__autoheader}
 %{__automake}
 %configure \
-	DCRAW=/usr/bin/dcraw \
-	FFMPEG=/usr/bin/ffmpegthumbnailer \
-	GRACE=/usr/bin/gracebat \
-	LATEX=/usr/bin/latex \
-	RAWTHUMBNAILER=/usr/bin/raw-thumbnailer \
 	--enable-raw \
 	--enable-tex \
 	--enable-grace \
 	--enable-ffmpeg \
-	--disable-update-mime-database
+	--disable-update-mime-database \
+	CONVERT=/usr/bin/convert \
+	DCRAW=/usr/bin/dcraw \
+	FFMPEG=/usr/bin/ffmpegthumbnailer \
+	GRACE=/usr/bin/gracebat \
+	LATEX=/usr/bin/latex \
+	RAWTHUMBNAILER=/usr/bin/raw-thumbnailer
+
 %{__make}
 
 %install
@@ -80,9 +85,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/ogg-thumbnailer
 %attr(755,root,root) %{_libdir}/pdf-thumbnailer
 %attr(755,root,root) %{_libdir}/ps-thumbnailer
+%attr(755,root,root) %{_libdir}/psd-thumbnailer
 %attr(755,root,root) %{_libdir}/raw-thumbnailer
 %attr(755,root,root) %{_libdir}/svgz-thumbnailer
 %attr(755,root,root) %{_libdir}/tex-thumbnailer
+%attr(755,root,root) %{_libdir}/xcf-thumbnailer
 %{_datadir}/mime/packages/thunar-thumbnailers.xml
 %{_datadir}/thumbnailers/agr-thumbnailer.desktop
 %{_datadir}/thumbnailers/dvi-thumbnailer.desktop
@@ -93,6 +100,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/thumbnailers/ogg-thumbnailer.desktop
 %{_datadir}/thumbnailers/pdf-thumbnailer.desktop
 %{_datadir}/thumbnailers/ps-thumbnailer.desktop
+%{_datadir}/thumbnailers/psd-thumbnailer.desktop
 %{_datadir}/thumbnailers/raw-thumbnailer.desktop
 %{_datadir}/thumbnailers/svgz-thumbnailer.desktop
 %{_datadir}/thumbnailers/tex-thumbnailer.desktop
+%{_datadir}/thumbnailers/xcf-thumbnailer.desktop
