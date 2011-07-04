@@ -8,7 +8,7 @@ Summary:	Thumbnailers plugin for the Thunar file manager
 Summary(pl.UTF-8):	Wtyczka Thumbnailers dla zarządcy plików Thunar
 Name:		Thunar-thumbnailers
 Version:	0.4.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://goodies.xfce.org/releases/thunar-thumbnailers/%{srcname}-%{version}.tar.bz2
